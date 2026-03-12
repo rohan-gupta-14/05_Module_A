@@ -23,10 +23,10 @@ CSS
 JAVASCRIPT
 
 # Live Link
-Vercel- 
+Vercel- https://05-module-a-pi.vercel.app/
 
 # Github
-Github Repo Link- 
+Github Repo Link- https://github.com/rohan-gupta-14/05_Module_A
 
 # Project Structure 
  05_Module_A
@@ -35,8 +35,6 @@ Github Repo Link-
     |--A1
     |   |-index.html
     |   |-style.css
-    |--A2
-    |--A3
     |--A4
     |   |-index.html
     |   |-style.css

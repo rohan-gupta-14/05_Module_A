@@ -4,7 +4,7 @@ body {
 	display: flex;
     justify-content: center;
     align-items:center;
-	background: linear-gradient(145deg, #6190e7 0%, #3a69eb 100%);
+	background: linear-gradient(145deg, #b0c0ddec 0%, #d2d6e0 100%);
 }
 
 
@@ -33,5 +33,5 @@ button{
 
 button:hover{
     transform:scale(1.1);
-    background: rgb(101, 106, 151);
+    background: rgb(226, 240, 176);
 }
