@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 - Price Range Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container" aria-label="Price range filter">
+        <h5>Filter By</h5>
+        <h2>Price Range</h2>
+
+        <div class="price-values" aria-live="polite">
+            <span id="leftValue">Rs. 300</span>
+            <span id="rightValue">Rs. 700</span>
+        </div>
+
+        <div class="range-slider" id="rangeSlider">
+            <div class="track"></div>
+            <div class="track-fill" id="trackFill"></div>
+
+            <input
+                id="minRange"
+                class="range-input"
+                type="range"
+                min="0"
+                max="1000"
+                step="25"
+                value="300"
+                aria-label="Minimum price"
+            >
+            <input
+                id="maxRange"
+                class="range-input"
+                type="range"
+                min="0"
+                max="1000"
+                step="25"
+                value="700"
+                aria-label="Maximum price"
+            >
+        </div>
+    </section>
+
+    <script>
+        const minRange = document.getElementById("minRange");
+        const maxRange = document.getElementById("maxRange");
+        const leftValue = document.getElementById("leftValue");
+        const rightValue = document.getElementById("rightValue");
+        const trackFill = document.getElementById("trackFill");
+
+        const min = Number(minRange.min);
+        const max = Number(minRange.max);
+        const step = Number(minRange.step);
+
+        function updateUI() {
+            const minVal = Number(minRange.value);
+            const maxVal = Number(maxRange.value);
+
+            leftValue.textContent = `Rs. ${minVal}`;
+            rightValue.textContent = `Rs. ${maxVal}`;
+
+            const leftPercent = ((minVal - min) / (max - min)) * 100;
+            const rightPercent = ((maxVal - min) / (max - min)) * 100;
+
+            trackFill.style.left = `${leftPercent}%`;
+            trackFill.style.width = `${rightPercent - leftPercent}%`;
+        }
+
+        minRange.addEventListener("input", () => {
+            let minVal = Number(minRange.value);
+            const maxVal = Number(maxRange.value);
+
+            if (minVal >= maxVal) {
+                minVal = maxVal - step;
+                minRange.value = String(Math.max(min, minVal));
+            }
+
+            updateUI();
+        });
+
+        maxRange.addEventListener("input", () => {
+            const minVal = Number(minRange.value);
+            let maxVal = Number(maxRange.value);
+
+            if (maxVal <= minVal) {
+                maxVal = minVal + step;
+                maxRange.value = String(Math.min(max, maxVal));
+            }
+
+            updateUI();
+        });
+
+        updateUI();
+    </script>
+</body>
+</html>

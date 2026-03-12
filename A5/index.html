@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compositor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <h1>Image Compositor</h1>
+        <p class="hint">Choose a base image and a subject image. The subject background is removed automatically, then merged into one result.</p>
+
+        <section class="upload-section" aria-label="Image uploads">
+            <div class="upload-card">
+                <label class="upload-label" for="bgInput">
+                    <span class="upload-icon"></span>
+                    <span class="upload-title">Image 1</span>
+                    <span class="upload-hint">Click to upload</span>
+                </label>
+                <input type="file" id="bgInput" accept="image/*">
+                <div class="thumb-wrap" id="bgThumb">
+                    <img id="bgPreview" src="" alt="Background preview">
+                </div>
+            </div>
+
+            <div class="plus-sign">+</div>
+
+            <div class="upload-card">
+                <label class="upload-label" for="wmInput">
+                    <span class="upload-icon"></span>
+                    <span class="upload-title">Image 2</span>
+                    <span class="upload-hint">Click to upload</span>
+                </label>
+                <input type="file" id="wmInput" accept="image/*">
+                <div class="thumb-wrap" id="wmThumb">
+                    <img id="wmPreview" src="" alt="Watermark preview">
+                </div>
+            </div>
+        </section>
+
+        <section class="action-row">
+            <button id="mergeBtn" type="button" disabled>Merge Images</button>
+            <button id="downloadBtn" type="button" class="download" disabled>⬇ Download as result.jpg</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+        </section>
+
+        <section class="preview-section" id="previewSection" aria-label="Preview">
+            <h2>Preview</h2>
+            <canvas id="canvas"></canvas>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

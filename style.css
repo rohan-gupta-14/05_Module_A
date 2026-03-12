@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: flex;
+    justify-content: center;
+    align-items:center;
+	background: linear-gradient(145deg, #6190e7 0%, #3a69eb 100%);
+}
+
+
+.container {
+	width: min(92vw, 420px);
+	padding: 24px;
+	border-radius: 16px;
+	background: #ffffff;
+	box-shadow: 0 10px 28px rgba(40, 28, 12, 0.14);
+}
+
+.box{
+    height:50px;
+    width:50px;
+}
+
+button{
+    height:30px;
+    width:100px;
+    background: linear-gradient(45deg, #4652f0e5,#275ec473);
+    transition:0.3s;
+    border-radius: 15px;
+    border:none;
+
+}
+
+button:hover{
+    transform:scale(1.1);
+    background: rgb(101, 106, 151);
+}

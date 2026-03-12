@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Keyword Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page">
+        <h1>Enhanced Keyword Search</h1>
+        <p class="hint">Enter one or more comma-separated keywords to highlight matching words in the paragraph.</p>
+
+        <section class="controls" aria-label="Search controls">
+            <input
+                id="keywordInput"
+                type="text"
+                placeholder="Example: India, Skills, Regionals"
+                aria-label="Keywords"
+            >
+            <button id="searchBtn" type="button">Search</button>
+            <button id="clearBtn" type="button" class="secondary">Clear</button>
+        </section>
+
+        <section class="content" aria-label="Paragraph content">
+            <p id="paragraphText">This is India Skills 2025-2026 South Regionals Competition. In this task, you are expected to highlight the text by matching with the user input. Add different colors to the different words. #BanengeBharatKeSkillChampion</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
